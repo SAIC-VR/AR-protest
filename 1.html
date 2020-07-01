@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>DC-AR</title>
+
+    <!-- import aframe and AR.js -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<!--     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.8/aframe/build/aframe-ar.js"></script> -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  </head>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+      
+      <!-- Augmented item -->
+      <a-text value="This shuold face the user." look-at=[gps-camera] position="0 2 100" scale="5 5 5"  
+      gps-entity-place="latitude: 38.9002180; longitude: -77.0360829;"></a-text>
+      
+      <!-- Augmented item -->
+      <a-text
+        value="Scale1 text"
+        look-at="[gps-camera]"
+        scale="1 1 1"
+        position="0 3 20"
+        gps-entity-place="latitude: 38.9002180; longitude: -77.0360829;">
+      </a-text>
+
+      <a-text
+        value="BLM"
+        look-at="#player"
+        scale="3 3 3"
+        gps-entity-place="latitude: 38.9002277; longitude: -77.0363035;">
+        </a-text>
+
+	   <a-sphere position="0 1 0" color="#4CC3D9" scale="2 2 2"
+                gps-entity-place="latitude: 38.900147; longitude: -77.036540"/>
+      </a-sphere>
+
+
+      <!-- -->
+      <a-box position="0 1 10" material="color: yellow" scale="1 1 1"
+              gps-entity-place="latitude: 38.9002245; longitude: -77.0367346"/>
+      </a-box>
+
+      <a-box position="0 1 20" material="color: yellow" scale="1 1 1"
+              gps-entity-place="latitude: 38.9002185; longitude: -77.0357764"/>
+      </a-box>
+
+      <a-entity id="whiteHouse" scale="200 200 200" position="0 20 0" geometry="primitive: box" material="src: url(images/004.png)" look-at="[gps-camera]"  gps-entity-place="latitude: 38.897631; longitude: -77.036538">
+      </a-entity>
+
+	    <a-entity  scale="2 2 2" position="0 2 30" geometry="primitive: box" material="src: url(images/001.png)" look-at="[gps-camera]" gps-entity-place="latitude: 38.9002185; longitude: -77.0357764"> 
+      </a-entity>
+
+      <a-entity  scale="2 2 2" position="0 2 50" geometry="primitive: plane" material="src: url(images/003.png)" look-at="[gps-camera]" gps-entity-place="latitude: 38.884751; longitude: -76.978822">
+      </a-entity>
+
+    <!--  <a-camera gps-camera  near="0.1" far="5000" rotation-reader> </a-camera>
+      -->
+
+     <a-entity id="camera-rig">
+      <a-camera 
+          near="0.1" far="10000"
+          gps-camera="simulateLatitude: 38.900147; simulateLongitude: -77.036540"rotation-reader>
+      </a-entity>
+
+      <!-- Locations
+        38.900229, -77.037907
+        38.900229, -77.036642
+        plaza: 38.900147, -77.036540
+        white house: 38.897631 -77.036538)
+      -->
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- https://medium.com/swlh/build-your-location-based-augmented-reality-web-app-a841956eed2c 
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <title>DC-AR</title>
+
+    <!-- import aframe and AR.js -->
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<!--     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.1.8/aframe/build/aframe-ar.js"></script> -->
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+  </head>
+
+  <script>
+    AFRAME.registerComponent('clickhandler', {
+        init: function() {
+            this.el.addEventListener('click', () => {
+                alert('Clicked!')
+            });
+    }});
+  </script>
+
+  <!-- include GeoAR.js -->
+  <!-- 
+  <script src="./scripts/gps-entity-place.js"></script>
+  <script src="./scripts/gps-camera-debug.js"></script>
+  <script src="./scripts/gps-camera.js"></script> 
+-->
+  <link rel="stylesheet" href="./index.css">
+ 
+  <!-- Dynamically add places from Javascript -->
+  <script src="./places.js"></script>
+
+  <body style="margin: 0; overflow: hidden;">
+    <a-scene
+      vr-mode-ui="enabled: false"
+      embedded
+      arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
+      
+
+	   <!-- Augmented item -->
+     <a-sphere clickhandler position="5 1 10" color="#4CC3D9" scale="1 1 1"
+              gps-entity-place="latitude: 41.892129; longitude: -87.687732;"/>
+      </a-sphere>
+
+      
+
+     <a-camera gps-camera  near="0.1" far="5000" rotation-reader> </a-camera>
+     
+
+<!--      <a-entity id="camera-rig">
+      <a-camera 
+          near="0.1" far="10000"
+          gps-camera="simulateLatitude: 38.900147; simulateLongitude: -77.036540"rotation-reader>
+      </a-entity>
+ -->
+      <!-- Locations
+        38.900229, -77.037907
+        38.900229, -77.036642
+        plaza: 38.900147, -77.036540
+        white house: 38.897631 -77.036538)
+      -->
+    </a-scene>
+  </body>
+</html>
