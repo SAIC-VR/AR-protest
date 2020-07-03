@@ -32,7 +32,7 @@ function renderPlaces(places) {
         sign.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         //sign.setAttribute('href', 'http://www.example.com/');
         //sign.setAttribute('src', '../assets/map-marker.png'); // create a variable tto point to that sign
-        console.log("latitute" + ${latitude}); 
+        console.log("latitute" + latitude);
         sign.setAttribute('scale', '10 10 10');
 
         sign.setAttribute('look-at', '[gps-camera]');
