@@ -23,13 +23,13 @@ function renderPlaces(places) {
 
     places.forEach((place) => {
         let m_name = place.name;
-        const latitude = place.location.lat;
-        const longitude = place.location.lng;
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
         
         // add place name
         let sign = document.createElement('a-text');
         sign.setAttribute('title', 'm_name');
-        sign.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude}');
+        sign.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};');
         //sign.setAttribute('href', 'http://www.example.com/');
         //sign.setAttribute('src', '../assets/map-marker.png'); // create a variable tto point to that sign
         console.log("latitute" + latitude);
@@ -39,7 +39,7 @@ function renderPlaces(places) {
 
 
         sign.addEventListener('loaded', () => {
-            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded', { detail: { component: this.el }}))
+            window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
         });
 
         scene.appendChild(sign);
