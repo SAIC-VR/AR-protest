@@ -19,20 +19,20 @@ function staticLoadPlaces(){
 }
 
 function renderPlaces(places) {
-    let scene = document.querySelector('a-scene');
+    const scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let m_name = place.name;
-        let latitude = place.location.lat;
-        let longitude = place.location.lng;
+        const m_name = place.name;
+        const latitude = place.location.lat;
+        const longitude = place.location.lng;
         
-        // add place name
-        let sign = document.createElement('a-text');
+        // add place sign
+        const sign = document.createElement('a-text');
         sign.setAttribute('title', 'm_name');
-        sign.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};');
+        sign.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         //sign.setAttribute('href', 'http://www.example.com/');
         //sign.setAttribute('src', '../assets/map-marker.png'); // create a variable tto point to that sign
-        console.log("latitute" + latitude);
+        console.log("latitute" + ${latitude});
         sign.setAttribute('scale', '10 10 10');
 
         sign.setAttribute('look-at', '[gps-camera]');
