@@ -6,7 +6,7 @@ window.onload = () => {
     return renderPlaces(places);
 };
 
-function staticLoadPlaces(place){
+function staticLoadPlaces(){
     return [
         {
             name: "my place",
@@ -45,11 +45,11 @@ function renderPlaces(places) {
         sign.setAttribute('scale', '10 10 10');
         sign.setAttribute('look-at=', '[gps-camera]');
 
-
         sign.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
         });
 
         scene.appendChild(sign);
+
     });
 }
