@@ -42,7 +42,7 @@ function renderPlaces(places) {
         console.log("latitute: " + latitude);
         console.log("longitude: " + longitude);
 
-        sign.setAttribute('scale=', '10 10 10');
+        sign.setAttribute('scale', '10 10 10');
         sign.setAttribute('look-at=', '[gps-camera]');
 
 
