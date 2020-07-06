@@ -40,7 +40,7 @@ function renderPlaces(places) {
         sign.setAttribute('title', 'm_name');
         //sign.setAttribute('href', 'http://www.example.com/');
         //sign.setAttribute('src', '../assets/map-marker.png'); // create a variable tto point to that sign
-        console.log("latitute: " + ${latitude});
+        console.log("latitute: " + latitude);
         console.log("longitude: " + longitude);
 
 
