@@ -29,17 +29,16 @@ function renderPlaces(places) {
     const scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        const m_name = place.name;
-        const latitude = place.location.lat;
-        const longitude = place.location.lng;
+        let m_name = place.name;
+        let latitude = place.location.lat;
+        let longitude = place.location.lng;
         
         // add place sign
-        const sign = document.createElement('a-text');
+        let sign = document.createElement('a-text');
+        
         sign.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
-
-        sign.setAttribute('title', 'm_name');
-        //sign.setAttribute('href', 'http://www.example.com/');
-        //sign.setAttribute('src', '../assets/map-marker.png'); // create a variable tto point to that sign
+        sign.setAttribute('title', m_name);
+        
         console.log("latitute: " + latitude);
         console.log("longitude: " + longitude);
 
