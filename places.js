@@ -18,7 +18,7 @@ function staticLoadPlaces(place){
         {
             name: "new place",
             location: {
-                lat: 41.342057,
+                lat: 41.892157,
                 lng: -87.676416,
             }
         },
@@ -36,15 +36,14 @@ function renderPlaces(places) {
         // add place sign
         let sign = document.createElement('a-text');
         
-        sign.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         sign.setAttribute('title', m_name);
+        sign.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         
         console.log("latitute: " + latitude);
         console.log("longitude: " + longitude);
 
-
-        sign.setAttribute('scale', '10 10 10');
-        sign.setAttribute('look-at', '[gps-camera]');
+        sign.setAttribute('scale=', '10 10 10');
+        sign.setAttribute('look-at=', '[gps-camera]');
 
 
         sign.addEventListener('loaded', () => {
@@ -53,8 +52,4 @@ function renderPlaces(places) {
 
         scene.appendChild(sign);
     });
-}
-
-function protestPlaces(places) {
-
 }
