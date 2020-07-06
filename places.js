@@ -6,7 +6,7 @@ window.onload = () => {
     return renderPlaces(places);
 };
 
-function staticLoadPlaces(){
+function staticLoadPlaces(place){
     return [
         {
             name: "my place",
@@ -45,7 +45,6 @@ function renderPlaces(places) {
 
 
         sign.setAttribute('scale', '10 10 10');
-
         sign.setAttribute('look-at', '[gps-camera]');
 
 
