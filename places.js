@@ -6,7 +6,7 @@ window.onload = () => {
     return renderPlaces(places);
 };
 
-function staticLoadPlaces(place){
+function staticLoadPlaces(){
     return [
         {
             name: "my place",
@@ -19,7 +19,7 @@ function staticLoadPlaces(place){
             name: "new place",
             location: {
                 lat: 41.342057,
-                lng: -87.666416,
+                lng: -87.676416,
             }
         },
     ];
@@ -35,17 +35,16 @@ function renderPlaces(places) {
         
         // add place sign
         const sign = document.createElement('a-text');
-        
-        sign.setAttribute('title', 'm_name');
-        sign.setAttribute('gps-entity-place', 'latitude: ${latitude}; longitude: ${longitude};');
+        sign.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
 
+        sign.setAttribute('title', 'm_name');
         //sign.setAttribute('href', 'http://www.example.com/');
         //sign.setAttribute('src', '../assets/map-marker.png'); // create a variable tto point to that sign
-        console.log("latitute: " + latitude);
+        console.log("latitute: " + ${latitude});
         console.log("longitude: " + longitude);
 
 
-        sign.setAttribute('scale: ', "10 10 10");
+        sign.setAttribute('scale', '10 10 10');
 
         sign.setAttribute('look-at', '[gps-camera]');
 
@@ -58,6 +57,6 @@ function renderPlaces(places) {
     });
 }
 
-function protestPlaces(placed) {
+function protestPlaces(places) {
 
 }
