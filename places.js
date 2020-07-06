@@ -26,19 +26,21 @@ function staticLoadPlaces(){
 }
 
 function renderPlaces(places) {
-    const scene = document.querySelector('a-scene');
+    let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
-        let m_name = place.name;
         let latitude = place.location.lat;
         let longitude = place.location.lng;
         
+        let m_name = place.name;
+
         // add place sign
         let sign = document.createElement('a-text');
         
         sign.setAttribute('title', m_name);
         //sign.setAttribute('gps-entity-place', '{ latitude: ${latitude}; longitude: ${longitude};}`);
-        sign.setAttribute('gps-entity-place', { latitude, longitude });
+        //sign.setAttribute('gps-entity-place', { latitude, longitude });
+        sign.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`)
 
         console.log("latitute: " + latitude);
         console.log("longitude: " + longitude);
@@ -54,3 +56,16 @@ function renderPlaces(places) {
         scene.appendChild(sign);
     });
 }
+
+
+
+
+    <script>
+      window.onload = () => {                       
+        navigator.geolocation.getCurrentPosition((position) => 
+            {
+                document.querySelector('a-text').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+            });
+     }
+    </script>
+
