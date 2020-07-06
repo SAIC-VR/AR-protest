@@ -42,7 +42,8 @@ function renderPlaces(places) {
         console.log("latitute: " + latitude);
         console.log("longitude: " + longitude);
 
-        sign.setAttribute('scale', '10 10 10');
+        //sign.setAttribute('scale', '10 10 10');
+        sign.setAttribute("scale", { x: 10, y: 10, z: 10 });
         sign.setAttribute('look-at', '[gps-camera]');
 
         sign.addEventListener('loaded', () => {
@@ -50,6 +51,5 @@ function renderPlaces(places) {
         });
 
         scene.appendChild(sign);
-
     });
 }
