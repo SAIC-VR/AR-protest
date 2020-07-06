@@ -28,8 +28,9 @@ function renderPlaces(places) {
         
         // add place sign
         const sign = document.createElement('a-text');
-        sign.setAttribute('title', 'm_name');
         sign.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
+
+        sign.setAttribute('title', 'm_name');
         //sign.setAttribute('href', 'http://www.example.com/');
         //sign.setAttribute('src', '../assets/map-marker.png'); // create a variable tto point to that sign
         console.log("latitute" + latitude);
@@ -44,4 +45,8 @@ function renderPlaces(places) {
 
         scene.appendChild(sign);
     });
+}
+
+function protestPlaces(places) {
+
 }
