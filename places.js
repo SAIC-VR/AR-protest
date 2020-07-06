@@ -38,8 +38,8 @@ function renderPlaces(places) {
         
         sign.setAttribute('title', m_name);
         sign.setAttribute('gps-entity-place', '{ latitude: ${latitude}; longitude: ${longitude};}`);
-        sign.setAttribute("gps-entity-place", { latitude: 42.0, longitude: 69105.0 });
-
+        sign.setAttribute('gps-entity-place', { latitude, longitude });
+        
         console.log("latitute: " + latitude);
         console.log("longitude: " + longitude);
 
