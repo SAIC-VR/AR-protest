@@ -14,6 +14,13 @@ function staticLoadPlaces(){
                 lat: 41.892057,
                 lng: -87.687416,
             }
+        },        
+        {
+            name: "new place",
+            location: {
+                lat: 41.342057,
+                lng: -87.666416,
+            }
         },
     ];
 }
@@ -35,7 +42,7 @@ function renderPlaces(places) {
         //sign.setAttribute('src', '../assets/map-marker.png'); // create a variable tto point to that sign
         console.log("latitute: " + latitude);
 
-        
+
         sign.setAttribute('scale', '10 10 10');
 
         sign.setAttribute('look-at', '[gps-camera]');
