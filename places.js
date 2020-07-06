@@ -37,9 +37,9 @@ function renderPlaces(places) {
         let sign = document.createElement('a-text');
         
         sign.setAttribute('title', m_name);
-        sign.setAttribute('gps-entity-place', '{ latitude: ${latitude}; longitude: ${longitude};}`);
+        //sign.setAttribute('gps-entity-place', '{ latitude: ${latitude}; longitude: ${longitude};}`);
         sign.setAttribute('gps-entity-place', { latitude, longitude });
-        
+
         console.log("latitute: " + latitude);
         console.log("longitude: " + longitude);
 
