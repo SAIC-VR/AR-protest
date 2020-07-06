@@ -43,7 +43,7 @@ function renderPlaces(places) {
         console.log("longitude: " + longitude);
 
         sign.setAttribute('scale', '10 10 10');
-        sign.setAttribute('look-at=', '[gps-camera]');
+        sign.setAttribute('look-at', '[gps-camera]');
 
         sign.addEventListener('loaded', () => {
             window.dispatchEvent(new CustomEvent('gps-entity-place-loaded'))
