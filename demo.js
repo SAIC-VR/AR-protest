@@ -18,6 +18,7 @@ function staticLoadPlaces() {
                 lat: 41.892091,
                 lng: -87.687988,
             },
+        },
         {
             name: 'jumpy',
             location: {
