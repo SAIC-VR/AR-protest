@@ -10,28 +10,35 @@ function staticLoadPlaces() {
             location: {
                 lat: 41.892218, 
                 lng: -87.686639, 
-            }
+            },
+        },
+        {
             name: 'jumpy',
             location: {
                 lat: 41.892091,
                 lng: -87.687988,
-            }
+            },
+        {
             name: 'jumpy',
             location: {
                 lat: 41.892078, 
                 lng: -87.688511,
-            }
+            },
+        },
+        {
             name: 'jumpy',
             location: {
                 lat: 41.892086, 
                 lng: -87.689165,
-            }
+            },
+        },
+        {
             name: 'jumpy',
             location: {
                 lat: 41.892185, 
                 lng: -87.690269,
-            }   
-        },
+            },
+        }, 
     ];
 }
 
