@@ -66,7 +66,7 @@ function renderPlaces(places) {
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
         model.setAttribute('gltf-model', './models/species_01.glb');
-        model.setAttribute('position', '0 2 -15');
+        model.setAttribute('position', '0 1 -15');
         model.setAttribute('animation-mixer', '');
         model.setAttribute('scale', '5.35 5.35 5s.35');
 
