@@ -1,6 +1,16 @@
 window.onload = () => {
-     let places = staticLoadPlaces();
-     renderPlaces(places);
+    var error = function(err){alert(JSON.stringify(err)};
+    var success = function(data){alert(JSON.stringify(data)};
+    navigator.geolocation.getCurrentPosition(success, error);
+
+    
+    setTimeout(() => {
+        // first get current user location
+        // return navigator.geolocation.getCurrentPosition(function (position) );
+
+        let places = staticLoadPlaces();
+        return renderPlaces(places);        
+    }, 3000)
 };
 
 function staticLoadPlaces() {
@@ -66,4 +76,19 @@ function renderPlaces(places) {
 
         scene.appendChild(model);
     });
+
+    (err) => console.error('Error in retrieving position', err),
+        {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+            timeout: 27000,
+        }
 }
+
+// function saveDataToFile(places) {
+
+//   var blob = new Blob([JSON.stringify(places)],
+//   { type: "text/plain;charset=utf-8" });
+//   var link=window.URL.createObjectURL(blob);
+//   window.open(link, '_blank')
+// }
