@@ -16,6 +16,9 @@ function staticLoadPlaces() {
 }
 
 function renderPlaces(places) {
+    console.log("places:");
+    console.log(places); //prints current coordinates around us
+
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
