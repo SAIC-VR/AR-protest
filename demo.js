@@ -1,7 +1,7 @@
 window.onload = () => {
-    var error = function(err){alert(JSON.stringify(err)};
-    var success = function(data){alert(JSON.stringify(data)};
-    navigator.geolocation.getCurrentPosition(success, error);
+//    var error = function(err){alert(JSON.stringify(err)};
+    //var success = function(data){alert(JSON.stringify(data)};
+    //navigator.geolocation.getCurrentPosition(success, error);
 
     
     setTimeout(() => {
