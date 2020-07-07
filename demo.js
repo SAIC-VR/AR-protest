@@ -8,8 +8,8 @@ function staticLoadPlaces() {
         {
             name: 'Ballzzy',
             location: {
-                lat: 41.892129,
-                lng: -87.687732,
+                lat: 41.892218, \\41.8922213
+                lng: -87.686639, \\-87.688462
             }
         },
     ];
